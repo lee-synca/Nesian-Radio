@@ -1,0 +1,9 @@
+# Local machine-specific Claude settings
+.claude/settings.local.json
+
+# Redundant archive (extracted into Shrikhand/)
+Shrikhand.zip
+
+# OS junk
+Thumbs.db
+.DS_Store
