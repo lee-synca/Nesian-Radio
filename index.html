@@ -164,8 +164,106 @@ gtag("config", "GT-MRMNDXJH");
 <meta name="msapplication-TileImage" content="/wp-content/uploads/2026/04/Favicon-300x300.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><script src="./Nesian FM - Pacific Island Radio _ Island Reggae &amp; Samoan Music Online_files/wp-emoji-release.min.js.download" defer=""></script></head>
 <body class="home wp-singular page-template page-template-elementor_canvas page page-id-5 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-13 elementor-page elementor-page-5 e--ua-isTouchDevice e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop">
+<!-- ===== NESIAN FM HEADER / FOOTER STYLES ===== -->
+<style id="nfm-style">
+:root{--nfm-gold:#FFC300;--nfm-cream:#F8F8EC;--nfm-orange:#E25822;--nfm-ink:#16110d;--nfm-ink2:#120d0a;}
+html{scroll-behavior:smooth;}
+.elementor-section[id]{scroll-margin-top:86px;}
+.nfm-header,.nfm-header *{box-sizing:border-box;}
+.nfm-header{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;align-items:center;gap:24px;
+  padding:14px clamp(16px,4vw,48px);font-family:'Poppins','Montserrat',sans-serif;
+  transition:background .3s ease,box-shadow .3s ease,padding .3s ease;
+  background-color:transparent;background-image:linear-gradient(to bottom,rgba(10,7,5,.6),rgba(10,7,5,0));}
+.nfm-header.nfm-scrolled{background-image:none;background-color:rgba(18,13,10,.94);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);box-shadow:0 2px 24px rgba(0,0,0,.4);padding-top:10px;padding-bottom:10px;}
+.nfm-logo{display:flex;align-items:center;flex:0 0 auto;text-decoration:none;}
+.nfm-logo img{height:44px;width:auto;display:block;transition:height .3s ease;}
+.nfm-header.nfm-scrolled .nfm-logo img{height:38px;}
+.nfm-nav{display:flex;align-items:center;gap:clamp(14px,2.3vw,36px);margin-left:auto;}
+.nfm-nav a{color:var(--nfm-cream);text-decoration:none;font-weight:500;font-size:15px;
+  letter-spacing:.01em;position:relative;padding:6px 2px;transition:color .2s ease;white-space:nowrap;}
+.nfm-nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+  background:var(--nfm-gold);transition:width .25s ease;}
+.nfm-nav a:hover{color:var(--nfm-gold);}
+.nfm-nav a:hover::after{width:100%;}
+.nfm-live{display:inline-flex;align-items:center;gap:9px;background:var(--nfm-gold);color:#1a1205;
+  font-weight:700;font-size:14px;font-family:inherit;text-decoration:none;padding:10px 20px;
+  border-radius:999px;letter-spacing:.02em;border:none;cursor:pointer;
+  box-shadow:0 6px 18px rgba(255,195,0,.28);transition:transform .15s ease,box-shadow .2s ease,background .2s ease;}
+.nfm-live:hover{transform:translateY(-1px);background:#ffce2b;box-shadow:0 8px 22px rgba(255,195,0,.42);}
+.nfm-live .nfm-dot{width:9px;height:9px;border-radius:50%;background:#e0202a;animation:nfm-pulse 1.6s infinite;}
+@keyframes nfm-pulse{0%{box-shadow:0 0 0 0 rgba(224,32,42,.6)}70%{box-shadow:0 0 0 8px rgba(224,32,42,0)}100%{box-shadow:0 0 0 0 rgba(224,32,42,0)}}
+.nfm-burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;margin-left:auto;}
+.nfm-burger span{width:26px;height:2px;background:var(--nfm-cream);border-radius:2px;transition:transform .25s ease,opacity .2s ease;}
+.nfm-header.nfm-open .nfm-burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nfm-header.nfm-open .nfm-burger span:nth-child(2){opacity:0;}
+.nfm-header.nfm-open .nfm-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:900px){
+  .nfm-burger{display:flex;}
+  .nfm-nav{position:fixed;top:0;right:0;height:100dvh;width:min(78vw,320px);flex-direction:column;
+    align-items:flex-start;justify-content:center;gap:26px;padding:0 34px;margin:0;
+    background:rgba(18,13,10,.98);backdrop-filter:blur(12px);transform:translateX(100%);
+    transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 40px rgba(0,0,0,.5);}
+  .nfm-header.nfm-open .nfm-nav{transform:translateX(0);}
+  .nfm-nav a{font-size:20px;font-family:'Poppins',sans-serif;}
+  .nfm-nav .nfm-live{margin-top:10px;font-size:16px;padding:12px 26px;}
+}
+/* ===== FOOTER ===== */
+.nfm-footer,.nfm-footer *{box-sizing:border-box;}
+.nfm-footer{background:var(--nfm-ink2);color:var(--nfm-cream);font-family:'Poppins','Montserrat',sans-serif;
+  border-top:3px solid var(--nfm-gold);padding:60px clamp(20px,5vw,80px) 0;}
+.nfm-foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto 44px;}
+.nfm-foot-brand img{height:54px;width:auto;margin-bottom:16px;}
+.nfm-tagline{font-family:'Shrikhand',serif;color:var(--nfm-gold);font-size:20px;line-height:1.25;margin:0 0 4px;}
+.nfm-subtag{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:rgba(248,248,236,.55);margin:0 0 16px;}
+.nfm-foot-brand p{color:rgba(248,248,236,.72);font-size:14px;line-height:1.7;max-width:38ch;margin:0 0 20px;}
+.nfm-socials{display:flex;gap:12px;}
+.nfm-socials a{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;
+  background:rgba(248,248,236,.08);color:var(--nfm-cream);font-size:17px;text-decoration:none;
+  transition:background .2s ease,color .2s ease,transform .15s ease;}
+.nfm-socials a:hover{background:var(--nfm-gold);color:#1a1205;transform:translateY(-2px);}
+.nfm-socials a img{width:20px;height:auto;filter:brightness(0) invert(1);}
+.nfm-socials a:hover img{filter:none;}
+.nfm-foot-col h4{font-family:'Shrikhand',serif;font-weight:400;color:var(--nfm-cream);font-size:16px;
+  margin:6px 0 18px;letter-spacing:.01em;}
+.nfm-foot-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+.nfm-foot-col a{color:rgba(248,248,236,.72);text-decoration:none;font-size:14px;transition:color .2s ease,padding-left .2s ease;}
+.nfm-foot-col a:hover{color:var(--nfm-gold);padding-left:4px;}
+.nfm-foot-live{display:inline-flex;align-items:center;gap:8px;margin-top:6px;background:var(--nfm-gold);
+  color:#1a1205;font-weight:700;font-size:13px;text-decoration:none;padding:9px 18px;border-radius:999px;cursor:pointer;border:0;font-family:inherit;transition:transform .15s ease;}
+.nfm-foot-live:hover{transform:translateY(-1px);}
+.nfm-foot-live .nfm-dot{width:8px;height:8px;border-radius:50%;background:#e0202a;animation:nfm-pulse 1.6s infinite;}
+.nfm-foot-bottom{border-top:1px solid rgba(248,248,236,.1);max-width:1200px;margin:0 auto;
+  padding:22px 0 26px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;}
+.nfm-foot-bottom p{margin:0;font-size:13px;color:rgba(248,248,236,.55);}
+.nfm-foot-bottom .nfm-685{font-family:'Shrikhand',serif;color:var(--nfm-gold);letter-spacing:.04em;}
+@media(max-width:820px){
+  .nfm-foot-grid{grid-template-columns:1fr 1fr;gap:36px;}
+  .nfm-foot-brand{grid-column:1 / -1;}
+}
+@media(max-width:520px){
+  .nfm-foot-grid{grid-template-columns:1fr;}
+  .nfm-foot-bottom{flex-direction:column;align-items:flex-start;}
+}
+</style>
+<!-- ===== NESIAN FM HEADER ===== -->
+<header class="nfm-header" id="nfm-header">
+  <a href="#top" class="nfm-logo" aria-label="Nesian FM home">
+    <img src="/wp-content/uploads/2026/04/NESIAN-FM-Transparent-300x127.png" alt="Nesian FM">
+  </a>
+  <button class="nfm-burger" id="nfm-burger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="nfm-nav" id="nfm-nav">
+    <a href="#top">Home</a>
+    <a href="#about">About</a>
+    <a href="#music">The Music</a>
+    <a href="#listen">Listen</a>
+    <button type="button" class="nfm-live" data-nfm-listen><span class="nfm-dot"></span>Listen Live</button>
+  </nav>
+</header>
 			<div data-elementor-type="wp-page" data-elementor-id="5" class="elementor elementor-5" data-elementor-post-type="page">
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-b1e118b elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b1e118b" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;triangle-asymmetrical&quot;}">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-b1e118b elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" id="top" data-id="b1e118b" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;triangle-asymmetrical&quot;}">
 							<div class="elementor-background-overlay"></div>
 						<div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="false">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
@@ -1120,7 +1218,7 @@ window.addEventListener('unload', () => {
 		</div>
 					</div>
 		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-889b833 elementor-section-content-middle elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="889b833" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-889b833 elementor-section-content-middle elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" id="about" data-id="889b833" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 							<div class="elementor-background-overlay"></div>
 							<div class="elementor-container elementor-column-gap-wider">
 					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-f202ff8" data-id="f202ff8" data-element_type="column" data-e-type="column">
@@ -1176,7 +1274,7 @@ window.addEventListener('unload', () => {
 		</div>
 					</div>
 		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-9d02fc9 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9d02fc9" data-element_type="section" data-e-type="section">
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-9d02fc9 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" id="music" data-id="9d02fc9" data-element_type="section" data-e-type="section">
 							<div class="elementor-background-overlay"></div>
 							<div class="elementor-container elementor-column-gap-wider">
 					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b5bbca1" data-id="b5bbca1" data-element_type="column" data-e-type="column">
@@ -1197,7 +1295,7 @@ window.addEventListener('unload', () => {
 		</div>
 					</div>
 		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-e6ae627 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e6ae627" data-element_type="section" data-e-type="section">
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-e6ae627 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" id="listen" data-id="e6ae627" data-element_type="section" data-e-type="section">
 						<div class="elementor-container elementor-column-gap-wider">
 					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-83af413" data-id="83af413" data-element_type="column" data-e-type="column">
 			<div class="elementor-widget-wrap elementor-element-populated">
@@ -1220,7 +1318,76 @@ window.addEventListener('unload', () => {
 					</div>
 		</section>
 				</div>
-		<script type="speculationrules">
+		<!-- ===== NESIAN FM FOOTER ===== -->
+<footer class="nfm-footer">
+  <div class="nfm-foot-grid">
+    <div class="nfm-foot-brand">
+      <img src="/wp-content/uploads/2026/04/NESIAN-FM-Transparent-300x127.png" alt="Nesian FM">
+      <p class="nfm-tagline">The Frequency of Home</p>
+      <p class="nfm-subtag">685 &nbsp;&middot;&nbsp; To The World</p>
+      <p>Pacific Island radio playing Island Reggae and Pacific Island music 24 hours a day, 7 days a week. Free. Online. Worldwide.</p>
+      <div class="nfm-socials">
+        <a href="#" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+        <a href="https://tunein.com/radio/Nesian-FM-s354598/" aria-label="TuneIn" target="_blank" rel="noopener"><i class="fas fa-broadcast-tower"></i></a>
+      </div>
+    </div>
+    <div class="nfm-foot-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#music">The Music</a></li>
+        <li><a href="#listen">Listen</a></li>
+      </ul>
+    </div>
+    <div class="nfm-foot-col">
+      <h4>Tune In</h4>
+      <ul>
+        <li><a href="#" data-nfm-listen>Listen Live</a></li>
+        <li><a href="https://tunein.com/radio/Nesian-FM-s354598/" target="_blank" rel="noopener">TuneIn Radio</a></li>
+      </ul>
+      <button type="button" class="nfm-foot-live" data-nfm-listen><span class="nfm-dot"></span>Listen Live</button>
+    </div>
+  </div>
+  <div class="nfm-foot-bottom">
+    <p>&copy; 2026 Nesian FM. All rights reserved.</p>
+    <p class="nfm-685">685 to the World</p>
+  </div>
+</footer>
+<script id="nfm-script">
+(function(){
+  var header=document.getElementById('nfm-header');
+  var burger=document.getElementById('nfm-burger');
+  var nav=document.getElementById('nfm-nav');
+  // shrink/solidify header on scroll
+  function onScroll(){ if(!header) return; header.classList.toggle('nfm-scrolled', window.scrollY>30); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  // mobile menu toggle
+  if(burger){ burger.addEventListener('click', function(){
+    var open=header.classList.toggle('nfm-open');
+    burger.setAttribute('aria-expanded', open?'true':'false');
+  }); }
+  // close mobile menu when a nav link is tapped
+  nav && nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ header.classList.remove('nfm-open'); burger&&burger.setAttribute('aria-expanded','false'); });
+  });
+  // "Listen Live" -> scroll to player and start it
+  function listenLive(e){
+    if(e) e.preventDefault();
+    header.classList.remove('nfm-open');
+    var top=document.getElementById('top'); top && top.scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){
+      var pb=document.querySelector('.play-button');
+      var audio=window.radioPlayer&&window.radioPlayer.audio;
+      if(pb && (!audio || audio.paused)) pb.click();
+    }, 650);
+  }
+  document.querySelectorAll('[data-nfm-listen]').forEach(function(el){ el.addEventListener('click', listenLive); });
+})();
+</script>
+<script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/hello-elementor/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
 			<script>
