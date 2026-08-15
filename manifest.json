@@ -1,0 +1,43 @@
+{
+  "name": "Nesian FM — The Frequency of Home",
+  "short_name": "Nesian FM",
+  "description": "Free 24/7 Pacific Island radio playing Island Reggae, Samoan and Pasifika music. 685 to the World.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#16110d",
+  "theme_color": "#120d0a",
+  "lang": "en-AU",
+  "dir": "ltr",
+  "categories": ["music", "entertainment"],
+  "icons": [
+    {
+      "src": "/wp-content/uploads/2026/04/Favicon-300x300.png",
+      "sizes": "300x300",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/wp-content/uploads/2026/04/NESIAN-FM-LOGO-512-x-512-px.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/wp-content/uploads/2026/04/NESIAN-FM-LOGO-512-x-512-px.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Listen Live",
+      "short_name": "Listen",
+      "description": "Start the live stream",
+      "url": "/?play=1&source=pwa"
+    }
+  ]
+}
