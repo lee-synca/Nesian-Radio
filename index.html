@@ -120,7 +120,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 :root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
 /*# sourceURL=global-styles-inline-css */
 </style>
-<link rel="stylesheet" href="/assets/home.css" media="all">
 
 
 
@@ -222,9 +221,106 @@ gtag("config", "GT-MRMNDXJH");
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Nesian FM">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+<style id="hp-style">
+:root{--cream:#FBF4E6;--ink:#26190F;--gold:#FFC300;--gold2:#FFD24A;--coral:#C9432F;--coral2:#E85C46;--warm:#7A2E18;--sub:#8A5A3E;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Poppins',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;}
+.hp *{box-sizing:border-box;}
+img{max-width:100%;}
+a{color:var(--coral);text-decoration:none;} a:hover{color:#a8410f;}
+.elementor-section[id]{scroll-margin-top:80px;}
+
+/* header */
+.hp-header{position:absolute;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;gap:28px;padding:24px clamp(20px,4vw,64px);}
+.hp-logo img{height:42px;width:auto;display:block;}
+.hp-nav{display:flex;gap:clamp(16px,2.1vw,30px);margin-left:auto;align-items:center;}
+.hp-nav a{color:#4A2A18;font-weight:600;font-size:15px;white-space:nowrap;}
+.hp-nav a:hover{color:var(--warm);}
+.hp-live{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--gold2);font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;border:0;border-radius:999px;padding:12px 22px;cursor:pointer;}
+.hp-live .dot,.hp-livedot{width:9px;height:9px;border-radius:50%;background:var(--coral2);box-shadow:0 0 0 4px rgba(232,92,70,.32);}
+.hp-burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;margin-left:auto;}
+.hp-burger span{width:26px;height:2px;background:var(--warm);border-radius:2px;transition:.25s;}
+.hp.nfm-open .hp-burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hp.nfm-open .hp-burger span:nth-child(2){opacity:0;}
+.hp.nfm-open .hp-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* hero */
+.hp-hero{position:relative;overflow:hidden;padding:118px clamp(20px,4vw,64px) 78px;text-align:center;
+  background:radial-gradient(125% 108% at 50% 3%, #FFE7A6 0%, #FFC64F 24%, #F6873F 52%, #E85C46 76%, #C4402E 100%);}
+.hp-sun{position:absolute;left:50%;top:60px;transform:translateX(-50%);opacity:.26;pointer-events:none;}
+.hp-hero-in{position:relative;z-index:2;max-width:980px;margin:0 auto;}
+.hp-eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--warm);margin-bottom:16px;}
+.hp-hero h1{font-family:'Shrikhand',serif;font-weight:400;font-size:clamp(40px,6.2vw,74px);line-height:.98;margin:0;color:#FFF7E6;text-shadow:0 3px 0 rgba(122,46,24,.2);}
+.hp-hero .hp-sub{max-width:52ch;margin:22px auto 0;font-size:clamp(16px,2vw,19px);line-height:1.55;color:#3A2013;font-weight:500;}
+.hp-cta{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:32px;}
+.hp-btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--gold2);font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;border:0;border-radius:999px;padding:16px 32px;cursor:pointer;box-shadow:0 12px 30px rgba(38,25,15,.26);}
+.hp-btn-ghost{display:inline-flex;align-items:center;gap:9px;background:rgba(255,247,230,.62);color:#3A2013;font-weight:600;font-size:15px;border:1px solid rgba(58,32,19,.22);border-radius:999px;padding:15px 26px;cursor:pointer;}
+
+/* PLAYER (restyled .radio-player, class hooks kept) */
+.radio-player{position:relative;margin:44px auto 0;width:min(900px,100%);background:rgba(255,250,240,.86);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.75);border-radius:30px;padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(20px,3vw,34px);align-items:center;box-shadow:0 40px 80px rgba(122,46,24,.3);text-align:left;}
+.album-artwork{position:relative;aspect-ratio:1;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#F6873F,#C9432F 55%,#7A2E18);box-shadow:0 20px 44px rgba(201,67,47,.36);}
+.album-artwork .artwork-image{width:100%;height:100%;object-fit:cover;display:block;}
+.album-artwork .artwork-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#FFF3E0;font-size:13px;}
+.rp-main{min-width:0;}
+.station-info .radio-name{display:none;}
+.live-container{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);}
+.live-indicator{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(201,67,47,.18);}
+.song-info .song-name{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--ink);margin:10px 0 2px;line-height:1.1;}
+.song-info .artist-name{font-size:17px;color:var(--sub);}
+.rp-wave{display:flex;align-items:flex-end;gap:5px;height:48px;margin:20px 0 18px;}
+.rp-wave span{flex:1;border-radius:2px;background:var(--gold);}
+.rp-wave span:nth-child(3n){background:#F6873F;} .rp-wave span:nth-child(3n+1){background:#E0A24A;} .rp-wave span:nth-child(4n){background:#D8B98A;}
+.rp-transport{display:flex;align-items:center;gap:16px;}
+.control-button{border:0;background:none;cursor:pointer;padding:0;color:inherit;}
+.play-button{width:62px;height:62px;border-radius:50%;background:var(--ink);color:var(--gold2);display:grid;place-items:center;box-shadow:0 12px 26px rgba(38,25,15,.28);flex:0 0 auto;}
+.play-button i{font-size:22px;margin-left:2px;}
+.play-button .fa-pause{margin-left:0;}
+.history-button,.volume-button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(122,46,24,.25);color:var(--warm);display:grid;place-items:center;flex:0 0 auto;}
+.history-button i,.volume-button i{font-size:15px;}
+.rp-progress{flex:1;min-width:0;}
+.time-bar{height:6px;border-radius:3px;background:rgba(122,46,24,.18);overflow:hidden;}
+.time-bar-progress{height:100%;background:var(--coral);border-radius:3px;}
+.time-info{display:flex;justify-content:space-between;font-size:12px;color:var(--sub);margin-top:7px;font-variant-numeric:tabular-nums;}
+.volume-bar-container{max-width:0;overflow:hidden;transition:max-width .2s;}
+.volume-bar-container.show{max-width:90px;}
+.volume-slider{width:80px;accent-color:var(--coral);}
+.history-modal{position:fixed;inset:0;z-index:100;}
+.history-modal-overlay{position:absolute;inset:0;background:rgba(28,19,11,.6);}
+.history-modal-content{position:relative;max-width:440px;margin:12vh auto 0;background:#FFFBF4;border-radius:20px;padding:26px;box-shadow:0 30px 70px rgba(0,0,0,.4);}
+.history-modal-title{font-family:'Shrikhand',serif;font-weight:400;color:var(--coral);margin:0 0 14px;}
+.history-modal-close{position:absolute;top:18px;right:18px;border:0;background:none;font-size:18px;color:var(--warm);cursor:pointer;}
+.history-list{display:flex;flex-direction:column;gap:12px;max-height:50vh;overflow:auto;}
+
+/* proof band */
+.hp-proof{display:flex;align-items:center;justify-content:center;gap:clamp(28px,5vw,64px);padding:38px 24px;background:var(--ink);color:var(--cream);flex-wrap:wrap;}
+.hp-proof .stat{text-align:center;}
+.hp-proof .stat b{font-family:'Shrikhand',serif;font-weight:400;font-size:30px;color:var(--gold);}
+.hp-proof .stat span{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#C9A98F;margin-top:4px;}
+.hp-proof .div{width:1px;height:44px;background:rgba(251,244,230,.18);}
+
+/* content sections */
+.hp-sec{max-width:1120px;margin:0 auto;padding:clamp(48px,7vw,84px) clamp(20px,5vw,40px);}
+.hp-sec h2{font-family:'Shrikhand',serif;font-weight:400;font-size:clamp(30px,4.6vw,46px);color:var(--coral);margin:0 0 16px;line-height:1.08;}
+.hp-sec p{font-size:17px;line-height:1.75;color:#5A3A26;margin:0 0 16px;}
+.hp-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center;}
+.hp-split img{width:100%;border-radius:22px;box-shadow:0 24px 50px rgba(122,46,24,.18);display:block;}
+.hp-chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;}
+.hp-chips span{padding:11px 22px;border-radius:999px;background:#FBE7C9;color:var(--warm);font-weight:600;}
+@media(max-width:860px){
+  .radio-player{grid-template-columns:1fr;text-align:center;}
+  .album-artwork{max-width:220px;margin:0 auto;}
+  .rp-transport,.live-container,.rp-wave{justify-content:center;}
+  .hp-split{grid-template-columns:1fr;}
+  .hp-nav{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);flex-direction:column;justify-content:center;align-items:flex-start;gap:24px;padding:0 34px;background:rgba(30,20,12,.98);transform:translateX(100%);transition:transform .3s;z-index:40;}
+  .hp-nav a{color:#FBF4E6;font-size:20px;}
+  .hp.nfm-open .hp-nav{transform:translateX(0);}
+  .hp-burger{display:flex;position:relative;z-index:50;}
+}
+</style>
 </head>
-<body class="home wp-singular page-template page-template-elementor_canvas page page-id-5 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-13 elementor-page elementor-page-5 e--ua-isTouchDevice e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop">
-<!-- ===== NESIAN FM HEADER / FOOTER STYLES ===== -->
+<body class="hp">
 <style id="nfm-style">
 :root{--nfm-gold:#FFC300;--nfm-cream:#F8F8EC;--nfm-orange:#E25822;--nfm-ink:#16110d;--nfm-ink2:#120d0a;}
 html{scroll-behavior:smooth;}
@@ -319,615 +415,65 @@ html{scroll-behavior:smooth;}
 .nfm-faq summary:hover{color:var(--nfm-gold);}
 .nfm-faq-a{padding:0 24px 22px;color:rgba(248,248,236,.75);font-size:15px;line-height:1.7;margin:0;}
 </style>
-<!-- ===== NESIAN FM HEADER ===== -->
-<header class="nfm-header" id="nfm-header">
-  <a href="#top" class="nfm-logo" aria-label="Nesian FM home">
-    <img src="/wp-content/uploads/2026/04/NESIAN-FM-Transparent-300x127.png" alt="Nesian FM">
-  </a>
-  <button class="nfm-burger" id="nfm-burger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <nav class="nfm-nav" id="nfm-nav">
-    <a href="#top">Home</a>
-    <a href="/about/">About</a>
-    <a href="/artists/">Artists</a>
-    <a href="/news/">News</a>
-    <a href="/how-to-listen/">How to Listen</a>
-    <button type="button" class="nfm-live" data-nfm-listen><span class="nfm-dot"></span>Listen Live</button>
+
+<header class="hp-header">
+  <a href="/" class="hp-logo" aria-label="Nesian FM home"><img src="/wp-content/uploads/2026/04/NESIAN-FM-Transparent-300x127.png" alt="Nesian FM"></a>
+  <button class="hp-burger" id="hp-burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="hp-nav" id="hp-nav">
+    <a href="/">Home</a><a href="/about/">About</a><a href="/artists/">Artists</a><a href="/news/">News</a><a href="/how-to-listen/">How to Listen</a>
+    <button type="button" class="hp-live" data-nfm-listen><span class="hp-livedot"></span>Listen Live</button>
   </nav>
 </header>
-			<div data-elementor-type="wp-page" data-elementor-id="5" class="elementor elementor-5" data-elementor-post-type="page">
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-b1e118b elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" id="top" data-id="b1e118b" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;triangle-asymmetrical&quot;}">
-							<div class="elementor-background-overlay"></div>
-						<div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M738,99l262-93V0H0v5.6L738,99z"></path>
-</svg>		</div>
-					<div class="elementor-container elementor-column-gap-wider">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6b6211b" data-id="6b6211b" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-ef8dfbf elementor-widget elementor-widget-heading" data-id="ef8dfbf" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h1 class="elementor-heading-title elementor-size-default">Nesian FM — The Frequency of Home</h1>				</div>
-				<div class="elementor-element elementor-element-31cc8f1 elementor-widget elementor-widget-text-editor" data-id="31cc8f1" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-									<p>Pacific Island Radio playing Island Reggae and Pacific Island music 24 hours a day, 7 days a week. Free. Online. Worldwide.</p>								</div>
-				<div class="elementor-element elementor-element-3c6a409 elementor-widget elementor-widget-image" data-id="3c6a409" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-																<a href="https://tunein.com/radio/Nesian-FM-s354598/">
-							<img fetchpriority="high" decoding="async" width="442" height="114" src="./Nesian FM - Pacific Island Radio _ Island Reggae &amp; Samoan Music Online_files/Tune-In-Icon.png" class="attachment-large size-large wp-image-61" alt="Listen to Nesian FM on TuneIn" srcset="/wp-content/uploads/2026/04/Tune-In-Icon.png 442w, /wp-content/uploads/2026/04/Tune-In-Icon-300x77.png 300w" sizes="(max-width: 442px) 100vw, 442px">								</a>
-															</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-dc3730a" data-id="dc3730a" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-225a421 elementor-widget elementor-widget-html" data-id="225a421" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
-					
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-<!-- Radio Player Widget HTML -->
+<section class="hp-hero" id="top">
+  <svg class="hp-sun" width="880" height="440" viewBox="0 0 880 440" aria-hidden="true"><g fill="none" stroke="#FFF6DF" stroke-width="2"><circle cx="440" cy="430" r="410"/><circle cx="440" cy="430" r="300"/><circle cx="440" cy="430" r="190"/></g></svg>
+  <div class="hp-hero-in">
+    <div class="hp-eyebrow">Pacific Island Radio · 685 to the World</div>
+    <h1>The Frequency of Home</h1>
+    <p class="hp-sub">Free, 24/7 island reggae, Samoan and Pasifika music — streaming from the islands to the world.</p>
 
-<div id="radio-player" class="radio-player" style="border-color: transparent;">
-    
-    <div class="album-artwork">
-        <img decoding="async" class="artwork-image" src="./Nesian FM - Pacific Island Radio _ Island Reggae &amp; Samoan Music Online_files/NESIAN-FM-LOGO-512-x-512-px.png" alt="Album Art" style="display: block;">
-        <div class="artwork-placeholder" style="display: none;">ALBUM ARTWORK AREA</div>
-    </div>
-    
-
-    
-    <div class="time-bar-container">
-        <div class="time-bar">
-            <div class="time-bar-progress" style="width: 44.7712%;"></div>
+    <div id="radio-player" class="radio-player">
+      <div class="album-artwork">
+        <img decoding="async" class="artwork-image" src="/wp-content/uploads/2026/04/NESIAN-FM-LOGO-512-x-512-px.png" alt="Now playing artwork">
+        <div class="artwork-placeholder" style="display:none;">Album artwork</div>
+      </div>
+      <div class="rp-main">
+        <div class="station-info">
+          <div class="live-container"><span class="live-indicator"></span><span class="live-text">Now Playing · Live</span></div>
+          <div class="radio-name">Nesian FM</div>
         </div>
-    </div>
-    
-    
-    <div class="time-info">
-        <span class="elapsed-time">2:17</span>
-        <span class="duration-time">5:06</span>
-    </div>
-    
-    <div class="station-info">
-        <div class="radio-name" style="font-weight: 600;">Nesian FM</div>
-        
-        <div class="live-container" style="display: none;">
-            <div class="live-indicator"></div>
-            <div class="live-text">LIVE</div>
+        <div class="song-info">
+          <div class="song-name">Souljah Feeling</div>
+          <div class="artist-name">Tomorrow People</div>
         </div>
-        
-    </div>
-    
-    <div class="song-info">
-        <div class="song-name">Era Bini Tu</div>
-        <div class="artist-name">Abl Vibez</div>
-    </div>
-    
-    <div class="controls-container">
-        <div class="controls">
-            
-            <button class="control-button history-button">
-                <i class="fas fa-history"></i>
-            </button>
-            
-            <button class="control-button play-button">
-                <i class="fas fa-play"></i>
-            </button>
-            
-            <button class="control-button volume-button">
-                <i class="fas fa-volume-up"></i>
-            </button>
-            <div class="volume-bar-container">
-                <input type="range" class="volume-slider" min="0" max="100" value="100">
-            </div>
-            
+        <div class="rp-wave" aria-hidden="true"><span style="height:38%"></span><span style="height:66%"></span><span style="height:92%"></span><span style="height:58%"></span><span style="height:80%"></span><span style="height:44%"></span><span style="height:70%"></span><span style="height:96%"></span><span style="height:50%"></span><span style="height:74%"></span><span style="height:34%"></span><span style="height:60%"></span><span style="height:40%"></span><span style="height:82%"></span><span style="height:52%"></span></div>
+        <div class="rp-transport">
+          <button class="control-button history-button" aria-label="Song history"><i class="fas fa-history"></i></button>
+          <button class="control-button play-button" aria-label="Play"><i class="fas fa-play"></i></button>
+          <button class="control-button volume-button" aria-label="Volume"><i class="fas fa-volume-up"></i></button>
+          <div class="volume-bar-container"><input type="range" class="volume-slider" min="0" max="100" value="100"></div>
+          <div class="rp-progress">
+            <div class="time-bar-container"><div class="time-bar"><div class="time-bar-progress" style="width:0%"></div></div></div>
+            <div class="time-info"><span class="elapsed-time">0:00</span><span class="duration-time">live</span></div>
+          </div>
         </div>
-    </div>
-
-    <!-- History Modal -->
-    
-    <div class="history-modal" style="display: none;">
+      </div>
+      <div class="history-modal" style="display:none;">
         <div class="history-modal-overlay"></div>
         <div class="history-modal-content">
-            <h3 class="history-modal-title">Song History</h3>
-            <button class="history-modal-close">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="history-list"></div>
+          <h3 class="history-modal-title">Song History</h3>
+          <button class="history-modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+          <div class="history-list"></div>
         </div>
+      </div>
     </div>
-    
-</div>
 
-<!-- Radio Player Widget CSS -->
-<style>
-
-/* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-.radio-player {
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    width: 300px;
-    height: auto;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-    border: 0px solid rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    margin: 10px;
-    box-sizing: border-box;
-    box-shadow: -2.82842712474619px 2.8284271247461903px 15px rgba(0, 0, 0, 0.2);
-    color: #ffffff;
-    overflow: hidden;
-}
-
-.player-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.album-artwork {
-    width: 100%;
-    aspect-ratio: 1;
-    position: relative;
-    overflow: hidden;
-}
-
-.artwork-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.artwork-placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(51, 51, 51, 0.2);
-    color: #ffffff;
-}
-
-.time-bar-container {
-    width: 100%;
-    padding: 5px 0;
-    position: relative;
-}
-
-.time-bar {
-    width: 100%;
-    height: 4px;
-    background: #ffffff33;
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative;
-}
-
-.time-bar-progress {
-    height: 100%;
-    background: #ffffff;
-    width: 0;
-    border-radius: 2px;
-    transition: width 0.1s linear;
-}
-
-.time-info {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    font-size: 12px;
-    color: #ffffff !important;
-    width: 100%;
-}
-
-.elapsed-time {
-    text-align: left;
-}
-
-.duration-time {
-    text-align: right;
-}
-
-.station-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
-}
-
-.radio-name {
-    font-size: 12px;
-    font-weight: 600;
-    color: #ffffff !important;
-    letter-spacing: 0px;
-    line-height: 1.5em;
-    word-spacing: 0px;
-}
-
-.live-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.live-indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #FF0000;
-    animation: pulse 2s infinite;
-}
-
-.live-text {
-    font-size: 12px;
-    color: #ffffff !important;
-    letter-spacing: 0px;
-    line-height: 1.5em;
-    word-spacing: 0px;
-}
-
-.song-info {
-    width: 100%;
-    padding: 15px 0;
-    text-align: center;
-}
-
-.song-name {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #ffffff !important;
-    letter-spacing: 0px;
-    line-height: 1.5em;
-    word-spacing: 0px;
-}
-
-.artist-name {
-    font-size: 12px;
-    opacity: 0.8;
-    color: #ffffff !important;
-    letter-spacing: 0px;
-    line-height: 1.5em;
-    word-spacing: 0px;
-}
-
-.controls-container {
-    position: relative;
-    width: 100%;
-}
-
-.controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px 20px;
-}
-
-.control-button {
-    background: transparent;
-    border: none;
-    color: #ffffff !important;
-    cursor: pointer;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    font-weight: normal;
-    box-shadow: -1.414213562373095px 1.4142135623730951px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    min-width: 36px;
-    width: 36px;
-    height: 36px;
-    aspect-ratio: 1;
-    text-transform: none;
-    transition: color 0.1s ease;
-}
-
-.control-button:hover {
-    color: #4AE66E !important;
-}
-
-.volume-bar-container {
-    position: absolute;
-    bottom: calc(100% + 5px);
-    left: 50%;
-    transform: translate(170%, 15px);
-    background: rgba(0, 0, 0, 0.8);
-    padding: 12px 8px;
-    border-radius: 8px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s ease;
-    z-index: 100;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    cursor: default;
-    height: 100px;
-    width: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.volume-bar-container:before {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid rgba(0, 0, 0, 0.8);
-}
-
-.volume-bar-container.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.volume-slider {
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    width: 80px !important;
-    height: 4px !important;
-    background: #ffffff40 !important;
-    border-radius: 2px !important;
-    outline: none !important;
-    transform: rotate(-90deg) !important;
-    transform-origin: center !important;
-    margin: 0 !important;
-    cursor: pointer !important;
-    position: absolute !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    width: 12px !important;
-    height: 12px !important;
-    background: #ffffff !important;
-    border-radius: 50% !important;
-    cursor: pointer !important;
-    transition: transform 0.2s ease !important;
-    transform-origin: center !important;
-    border: none !important;
-    margin-top: -4px !important;
-    box-shadow: none !important;
-}
-
-.volume-slider::-moz-range-thumb {
-    width: 12px !important;
-    height: 12px !important;
-    background: #ffffff !important;
-    border-radius: 50% !important;
-    cursor: pointer !important;
-    transition: transform 0.2s ease !important;
-    transform-origin: center !important;
-    border: none !important;
-    margin-top: -4px !important;
-    box-shadow: none !important;
-}
-
-.volume-slider::-webkit-slider-runnable-track {
-    height: 4px !important;
-    border-radius: 2px !important;
-    background: inherit !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.volume-slider::-moz-range-track {
-    height: 4px !important;
-    border-radius: 2px !important;
-    background: inherit !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.volume-slider::-webkit-slider-thumb:hover {
-    transform: scale(1.2) !important;
-}
-
-.volume-slider::-moz-range-thumb:hover {
-    transform: scale(1.2) !important;
-}
-
-.volume-button:hover .volume-bar-container,
-.volume-bar-container:hover {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* History Modal Styles */
-.history-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-}
-
-.history-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 10000;
-}
-
-.history-modal-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1.45rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-    z-index: 10001;
-    max-width: 500px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    font-family: 'Poppins', sans-serif;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-}
-
-/* WebKit scrollbar styles */
-.history-modal-content::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-.history-modal-content::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 3px;
-}
-
-.history-modal-content::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
-    transition: background 0.2s;
-}
-
-.history-modal-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-.history-modal-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #ffffff !important;
-    margin: 0 0 0.97rem 0;
-    padding-right: 1.45rem;
-    letter-spacing: 0px;
-    line-height: 1.5em;
-    word-spacing: 0px;
-}
-
-.history-modal-close {
-    position: absolute;
-    top: 0.97rem;
-    right: 0.97rem;
-    background: none;
-    border: none;
-    color: #ffffff !important;
-    cursor: pointer;
-    padding: 0.387rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 7px;
-}
-
-.history-modal-close:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.history-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.history-item {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: background-color 0.2s;
-}
-
-.history-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.history-artwork {
-    width: 50px;
-    height: 50px;
-    border-radius: 4px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.history-artwork img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.history-song-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.history-song-title {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #ffffff !important;
-    letter-spacing: 0px;
-    line-height: 1.5em;
-    word-spacing: 0px;
-}
-
-.history-artist-name {
-    font-size: 0.75rem;
-    color: #ffffff99 !important;
-    letter-spacing: 0px;
-    line-height: 1.5em;
-    word-spacing: 0px;
-}
-
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
-}
-
-.radio-player .control-button {
-    padding: 5px;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-}
-
-.radio-player .control-button.play-button {
-    width: calc(36px * 1.3);
-    height: calc(36px * 1.3);
-    font-size: 1.5rem;
-}
-
-.radio-player .control-button .fa-play {
-    margin-left: 2px;
-    font-size: inherit;
-}
-
-.radio-player .control-button .fa-pause {
-    font-size: inherit;
-}
-
-
-</style>
-
-
+    <div class="hp-cta">
+      <button type="button" class="hp-btn-primary" data-nfm-listen><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Listen Live</button>
+      <a class="hp-btn-ghost" href="https://tunein.com/radio/Nesian-FM-s354598/" target="_blank" rel="noopener">on TuneIn</a>
+    </div>
+  </div>
+</section>
 <script>
 class RadioPlayer {
     constructor(container, config) {
@@ -1288,111 +834,40 @@ window.addEventListener('unload', () => {
     }
 });
 </script>				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-889b833 elementor-section-content-middle elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" id="about" data-id="889b833" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-							<div class="elementor-background-overlay"></div>
-							<div class="elementor-container elementor-column-gap-wider">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-f202ff8" data-id="f202ff8" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-ec0f810 elementor-widget elementor-widget-image" data-id="ec0f810" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-															<img decoding="async" width="800" height="338" data-src="/wp-content/uploads/2026/04/NESIAN-FM-Transparent-1024x433.png" class="attachment-large size-large wp-image-25 lazyloaded" alt="Nesian FM logo" data-srcset="/wp-content/uploads/2026/04/NESIAN-FM-Transparent-1024x433.png 1024w, /wp-content/uploads/2026/04/NESIAN-FM-Transparent-300x127.png 300w, /wp-content/uploads/2026/04/NESIAN-FM-Transparent-768x325.png 768w, /wp-content/uploads/2026/04/NESIAN-FM-Transparent-1536x650.png 1536w, /wp-content/uploads/2026/04/NESIAN-FM-Transparent.png 1725w" data-sizes="(max-width: 800px) 100vw, 800px" src="./Nesian FM - Pacific Island Radio _ Island Reggae &amp; Samoan Music Online_files/NESIAN-FM-Transparent-1024x433.png" style="--smush-placeholder-width: 800px; --smush-placeholder-aspect-ratio: 800/338;" sizes="(max-width: 800px) 100vw, 800px" srcset="/wp-content/uploads/2026/04/NESIAN-FM-Transparent-1024x433.png 1024w, /wp-content/uploads/2026/04/NESIAN-FM-Transparent-300x127.png 300w, /wp-content/uploads/2026/04/NESIAN-FM-Transparent-768x325.png 768w, /wp-content/uploads/2026/04/NESIAN-FM-Transparent-1536x650.png 1536w, /wp-content/uploads/2026/04/NESIAN-FM-Transparent.png 1725w">															</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-8d4dc56" data-id="8d4dc56" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-afad0a3 elementor-widget elementor-widget-heading" data-id="afad0a3" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">Your Home for Pacific Island Music</h2>				</div>
-				<div class="elementor-element elementor-element-4c1c255 elementor-widget elementor-widget-text-editor" data-id="4c1c255" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-									<p>Nesian FM is the online radio station built for Pacific Islanders around the world. Whether you’re in Auckland, Sydney, Los Angeles, London, or anywhere in between — we bring the sounds of the islands straight to you, 24/7.</p><p>We play the best Island Reggae and Pacific Island music from Samoan, Tongan, Fijian, Hawaiian, Cook Island, Niuean and Polynesian artists. From the roots reggae sounds of the Pacific to contemporary Pasifika music — if it comes from the islands, it belongs on Nesian FM.</p><p>This is more than a radio station. It’s a connection back home. A reminder of who we are, where we come from, and the music that raised us. Turn it on and let the islands come to you.</p>								</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-a29825e elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a29825e" data-element_type="section" data-e-type="section">
-						<div class="elementor-container elementor-column-gap-wider">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-42ae4f7" data-id="42ae4f7" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-d9b138d elementor-widget elementor-widget-heading" data-id="d9b138d" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">Pure Pacific. All Day. All Night.</h2>				</div>
-				<div class="elementor-element elementor-element-1fe2d51 elementor-widget elementor-widget-text-editor" data-id="1fe2d51" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-									<p>Nesian FM plays the music Pacific Islanders love. Our playlist is built around:</p><p>&nbsp;</p><p><img decoding="async" class="emoji lazyload" role="img" draggable="false" data-src="https://s.w.org/images/core/emoji/17.0.2/svg/1f30a.svg" alt="🌊" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg=="> <b>Island Reggae</b> — The sound of the Pacific. Artists like J Boog, Fiji, Katchafire, Three Houses Down, Tomorrow People, Kolohe Kai, Rebel Souljahz and the best Pacific reggae artists from New Zealand, Hawaii, Australia and across Oceania.</p><p><img decoding="async" class="emoji lazyload" role="img" draggable="false" data-src="https://s.w.org/images/core/emoji/17.0.2/svg/1f3b5.svg" alt="🎵" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg=="> <b>Pacific Island Music</b> — Samoan music, Tongan music, Fijian music, Hawaiian music, Cook Island music and Polynesian music from artists across the Pacific. Traditional sounds and contemporary Pasifika artists side by side.</p>								</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-02cc856" data-id="02cc856" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-018260c elementor-widget elementor-widget-image" data-id="018260c" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-															<img decoding="async" width="800" height="534" data-src="/wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach-1024x683.jpg" class="attachment-large size-large wp-image-76 lazyloaded" alt="Pacific Island family sharing a feast on the beach" data-srcset="/wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach-1024x683.jpg 1024w, /wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach-300x200.jpg 300w, /wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach-768x512.jpg 768w, /wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach.jpg 1248w" data-sizes="(max-width: 800px) 100vw, 800px" src="/wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach-1024x683.jpg" style="--smush-placeholder-width: 800px; --smush-placeholder-aspect-ratio: 800/534;" sizes="(max-width: 800px) 100vw, 800px" srcset="/wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach-1024x683.jpg 1024w, /wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach-300x200.jpg 300w, /wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach-768x512.jpg 768w, /wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach.jpg 1248w">															</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-ea8f7a3 elementor-section-content-middle elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ea8f7a3" data-element_type="section" data-e-type="section">
-							<div class="elementor-background-overlay"></div>
-							<div class="elementor-container elementor-column-gap-wider">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-acba9d9" data-id="acba9d9" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-966f812 elementor-widget elementor-widget-image" data-id="966f812" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-															<img decoding="async" width="800" height="534" data-src="/wp-content/uploads/2026/04/Nesian-FB-1024x683.jpg" class="attachment-large size-large wp-image-75 lazyload" alt="Pacific Island community enjoying an island gathering" data-srcset="/wp-content/uploads/2026/04/Nesian-FB-1024x683.jpg 1024w, /wp-content/uploads/2026/04/Nesian-FB-300x200.jpg 300w, /wp-content/uploads/2026/04/Nesian-FB-768x512.jpg 768w, /wp-content/uploads/2026/04/Nesian-FB.jpg 1248w" data-sizes="(max-width: 800px) 100vw, 800px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==" style="--smush-placeholder-width: 800px; --smush-placeholder-aspect-ratio: 800/534;">															</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-8e025c4" data-id="8e025c4" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-8c9372e elementor-widget elementor-widget-heading" data-id="8c9372e" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">For the Diaspora. For the Culture. For Our People.</h2>				</div>
-				<div class="elementor-element elementor-element-28a6b3c elementor-widget elementor-widget-text-editor" data-id="28a6b3c" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-									<p>There are Pacific Islanders living in every corner of the world. In cities far from the ocean. Far from family. Far from home. Nesian FM was built for you.</p><p><br>We know what it feels like to miss the islands. The smell of the sea. The sound of family. The music that played at every barbecue, every church, every gathering growing up. That’s what we put on air every single day.</p><p><br>Nesian FM is for the Samoan community worldwide. For Tongan families abroad. For Fijian, Hawaiian, Cook Island, Niuean and Tokelauan people living overseas. For anyone who carries the Pacific in their heart no matter where they live.</p>								</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-9d02fc9 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" id="music" data-id="9d02fc9" data-element_type="section" data-e-type="section">
-							<div class="elementor-background-overlay"></div>
-							<div class="elementor-container elementor-column-gap-wider">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b5bbca1" data-id="b5bbca1" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-a28ee31 elementor-widget elementor-widget-heading" data-id="a28ee31" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">The Music Behind Nesian FM</h2>				</div>
-				<div class="elementor-element elementor-element-7e923b4 elementor-widget elementor-widget-text-editor" data-id="7e923b4" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-									<p>Nesian FM was built by Lee, a Pacific Islander who knows what it feels like to live far from the islands and miss the sounds of home. You might know him as DJ Damage from back in the day — now creating AI-reimagined Pacific Island classics under the name Tama Vaiusu.</p><p>After years in the Pacific Island music scene, he built Nesian FM so our people worldwide always have somewhere to tune in and feel connected to their roots, their culture, and the music that raised them.</p><p>Alongside curating the best Island Reggae and Pacific Island music from artists around the world, Tama Vaiusu also breathes new life into the beloved classics our parents and grandparents grew up with — keeping them alive for a new generation.</p><p>&nbsp;</p><p><img draggable="false" role="img" class="emoji" alt="🎵" src="./Nesian FM - Pacific Island Radio _ Island Reggae &amp; Samoan Music Online_files/1f3b5.svg"> <a href="https://www.youtube.com/@TamaVaiusu" data-wplink-edit="true">YouTube – Tama Vaiusu</a><br><img draggable="false" role="img" class="emoji" alt="📘" src="./Nesian FM - Pacific Island Radio _ Island Reggae &amp; Samoan Music Online_files/1f4d8.svg"> <a href="https://www.facebook.com/nesianfm">Facebook – Nesian FM</a><br><img draggable="false" role="img" class="emoji" alt="🎵" src="./Nesian FM - Pacific Island Radio _ Island Reggae &amp; Samoan Music Online_files/1f3b5.svg"> <a href="https://www.tiktok.com/@tama.vaiusu">Follow on TikTok – Tama Vaiusu</a></p>								</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-de2e9df" data-id="de2e9df" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-bfded6c elementor-widget elementor-widget-image" data-id="bfded6c" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-																<a href="https://www.youtube.com/@TamaVaiusu">
-							<img decoding="async" width="512" height="512" data-src="/wp-content/uploads/2026/04/Tama-Vaiusu-Logo-Transparent.png" class="attachment-large size-large wp-image-105 lazyload" alt="Tama Vaiusu" data-srcset="/wp-content/uploads/2026/04/Tama-Vaiusu-Logo-Transparent.png 512w, /wp-content/uploads/2026/04/Tama-Vaiusu-Logo-Transparent-300x300.png 300w, /wp-content/uploads/2026/04/Tama-Vaiusu-Logo-Transparent-150x150.png 150w" data-sizes="(max-width: 512px) 100vw, 512px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==" style="--smush-placeholder-width: 512px; --smush-placeholder-aspect-ratio: 512/512;">								</a>
-															</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-e6ae627 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" id="listen" data-id="e6ae627" data-element_type="section" data-e-type="section">
-						<div class="elementor-container elementor-column-gap-wider">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-83af413" data-id="83af413" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-7357878 elementor-widget elementor-widget-heading" data-id="7357878" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">Listen to Nesian FM Online — Free, Anywhere, Anytime</h2>				</div>
-				<div class="elementor-element elementor-element-cf7de2c elementor-widget elementor-widget-text-editor" data-id="cf7de2c" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-									<p>Nesian FM streams live online 24 hours a day, 7 days a week. No subscription. No sign up. Just pure Pacific Island music, free to listen wherever you are in the world.</p><p>Stream Nesian FM on your phone, tablet, laptop or desktop. Available worldwide on <a href="https://tunein.com/radio/Nesian-FM-s354598/">TuneIn Radio</a> and at nesianfm.com – Pacific Island radio has never been this easy to find.</p>								</div>
-				<div class="elementor-element elementor-element-4979c00 elementor-widget elementor-widget-image" data-id="4979c00" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-																<a href="https://tunein.com/radio/Nesian-FM-s354598/">
-							<img fetchpriority="high" decoding="async" width="442" height="114" src="./Nesian FM - Pacific Island Radio _ Island Reggae &amp; Samoan Music Online_files/Tune-In-Icon.png" class="attachment-large size-large wp-image-61" alt="Listen to Nesian FM on TuneIn" srcset="/wp-content/uploads/2026/04/Tune-In-Icon.png 442w, /wp-content/uploads/2026/04/Tune-In-Icon-300x77.png 300w" sizes="(max-width: 442px) 100vw, 442px">								</a>
-															</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-767e2fc" data-id="767e2fc" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-547fb47 elementor-widget elementor-widget-image" data-id="547fb47" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-															<img decoding="async" width="800" height="451" data-src="/wp-content/uploads/2026/04/Nesian-FM-Facebook-Cover-1024x577.png" class="attachment-large size-large wp-image-74 lazyload" alt="Nesian FM - Pacific Island radio" data-srcset="/wp-content/uploads/2026/04/Nesian-FM-Facebook-Cover-1024x577.png 1024w, /wp-content/uploads/2026/04/Nesian-FM-Facebook-Cover-300x169.png 300w, /wp-content/uploads/2026/04/Nesian-FM-Facebook-Cover-768x433.png 768w, /wp-content/uploads/2026/04/Nesian-FM-Facebook-Cover-1536x865.png 1536w, /wp-content/uploads/2026/04/Nesian-FM-Facebook-Cover.png 1640w" data-sizes="(max-width: 800px) 100vw, 800px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==" style="--smush-placeholder-width: 800px; --smush-placeholder-aspect-ratio: 800/451;">															</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				</div>
-		<!-- ===== NESIAN FM FAQ ===== -->
+
+<div class="hp-proof">
+  <div class="stat"><b>24/7</b><span>Always on</span></div>
+  <div class="div"></div>
+  <div class="stat"><b>100% Free</b><span>No sign-up</span></div>
+  <div class="div"></div>
+  <div class="stat"><b>685</b><span>To the world</span></div>
+</div>
+
+<div class="hp-sec">
+  <h2>Your Home for Pacific Island Music</h2>
+  <p>Nesian FM is the online radio station built for Pacific Islanders around the world. Whether you're in Auckland, Sydney, Los Angeles, London, or anywhere in between — we bring the sounds of the islands straight to you, 24/7.</p>
+  <p>We play the best Island Reggae and Pacific Island music from Samoan, Tongan, Fijian, Hawaiian, Cook Island, Niuean and Polynesian artists. From the roots reggae sounds of the Pacific to contemporary Pasifika music — if it comes from the islands, it belongs on Nesian FM.</p>
+  <p>This is more than a radio station. It's a connection back home. A reminder of who we are, where we come from, and the music that raised us. Turn it on and let the islands come to you.</p>
+</div>
+
+<section class="hp-sec" id="about">
+  <div class="hp-split">
+    <div>
+      <h2>For the Diaspora. For the Culture. For Our People.</h2>
+      <p>There are Pacific Islanders living in every corner of the world. In cities far from the ocean. Far from family. Far from home. Nesian FM was built for you.</p>
+      <p>We know what it feels like to miss the islands — the smell of the sea, the sound of family, the music that played at every barbecue, every church, every gathering growing up. That's what we put on air every single day.</p>
+    </div>
+    <img src="/wp-content/uploads/2026/04/Nesian-Feed-on-the-Beach-1024x683.jpg" width="1024" height="683" loading="lazy" decoding="async" alt="Pacific Island family sharing a feast on the beach">
+  </div>
+</section>
+
+<section class="hp-sec" id="music">
+  <h2>Pure Pacific. All day. All night.</h2>
+  <p>The soundtrack to every island gathering — from the roots of island reggae to the newest Pasifika releases. Artists like J Boog, Fiji, Katchafire, Three Houses Down and Tomorrow People, alongside Samoan, Tongan, Fijian and Hawaiian favourites.</p>
+  <div class="hp-chips">
+    <span>Island Reggae</span><span>Samoan</span><span>Pasifika</span><span>Tongan &amp; Fijian</span><span>Reggae</span>
+  </div>
+</section>
 <section class="nfm-faq" id="faq">
   <div class="nfm-faq-inner">
     <h2>Frequently Asked Questions</h2>
@@ -1419,7 +894,6 @@ window.addEventListener('unload', () => {
     </details>
   </div>
 </section>
-<!-- ===== NESIAN FM FOOTER ===== -->
 <footer class="nfm-footer">
   <div class="nfm-foot-grid">
     <div class="nfm-foot-brand">
@@ -1428,6 +902,9 @@ window.addEventListener('unload', () => {
       <p class="nfm-subtag">685 &nbsp;&middot;&nbsp; To The World</p>
       <p>Pacific Island radio playing Island Reggae and Pacific Island music 24 hours a day, 7 days a week. Free. Online. Worldwide.</p>
       <div class="nfm-socials">
+        <a href="https://www.facebook.com/nesianfm" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@TamaVaiusu" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@tama.vaiusu" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
         <a href="https://tunein.com/radio/Nesian-FM-s354598/" aria-label="Listen on TuneIn" target="_blank" rel="noopener"><i class="fas fa-broadcast-tower"></i></a>
       </div>
     </div>
@@ -1489,70 +966,5 @@ window.addEventListener('unload', () => {
   if(location.search.indexOf('play=1')>-1){ setTimeout(function(){ listenLive(); }, 500); }
 })();
 </script>
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/hello-elementor/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
-			<script>
-				const lazyloadRunObserver = () => {
-					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
-					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
-						entries.forEach( ( entry ) => {
-							if ( entry.isIntersecting ) {
-								let lazyloadBackground = entry.target;
-								if( lazyloadBackground ) {
-									lazyloadBackground.classList.add( 'e-lazyloaded' );
-								}
-								lazyloadBackgroundObserver.unobserve( entry.target );
-							}
-						});
-					}, { rootMargin: '200px 0px 200px 0px' } );
-					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
-						lazyloadBackgroundObserver.observe( lazyloadBackground );
-					} );
-				};
-				const events = [
-					'DOMContentLoaded',
-					'elementor/lazyload/observe',
-				];
-				events.forEach( ( event ) => {
-					document.addEventListener( event, lazyloadRunObserver );
-				} );
-			</script>
-			<script id="hostinger-reach-subscription-block-view-js-extra">
-var hostinger_reach_subscription_block_data = {"endpoint":"https://nesianfm.com/wp-json/hostinger-reach/v1/contact","nonce":"446637fbe7","translations":{"thanks":"Thanks for subscribing.","error":"Something went wrong. Please try again."}};
-//# sourceURL=hostinger-reach-subscription-block-view-js-extra
-</script>
-
-
-
-
-
-<script id="elementor-frontend-js-before">
-var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"4.1.4","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"e_panel_promotions":true,"hello-theme-header-footer":true,"e_pro_free_trial_popup":true,"e_atomic_elements":true,"atomic_widgets_should_enforce_capabilities":true,"editor_mcp":true,"e_bc_migrations":true,"e_editor_design_system_panel":true,"e_classes":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"e_variables_manager":true,"e_opt_in_v4_page":true,"e_opt_in_v4":true,"e_components":true,"e_interactions":true,"e_widget_creation":true,"import-export-customization":true,"e_pro_atomic_form":true,"e_pro_variables":true,"e_pro_interactions":true},"urls":{"assets":"https:\/\/nesianfm.com\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/nesianfm.com\/wp-admin\/admin-ajax.php","uploadUrl":"http:\/\/nesianfm.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"5b37837c8c","atomicFormsSendForm":"6d598b5b3b"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"logo","hello_footer_logo_type":"logo"},"post":{"id":5,"title":"Nesian%20FM%20-%20Pacific%20Island%20Radio%20%7C%20Island%20Reggae%20%26%20Samoan%20Music%20Online","excerpt":"","featuredImage":"https:\/\/nesianfm.com\/wp-content\/uploads\/2026\/04\/NESIAN-FM-LOGO-512-x-512-px.png"}};
-//# sourceURL=elementor-frontend-js-before
-</script>
-<span id="elementor-device-mode" class="elementor-screen-only"></span>
-<script id="smush-lazy-load-js-before">
-var smushLazyLoadOptions = {"autoResizingEnabled":false,"autoResizeOptions":{"precision":5,"skipAutoWidth":true}};
-//# sourceURL=smush-lazy-load-js-before
-</script>
-<script src="./Nesian FM - Pacific Island Radio _ Island Reggae &amp; Samoan Music Online_files/smush-lazy-load.min.js.download" id="smush-lazy-load-js"></script>
-
-
-
-
-<script id="elementor-pro-frontend-js-before">
-var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/nesianfm.com\/wp-admin\/admin-ajax.php","nonce":"0efacb497d","urls":{"assets":"https:\/\/nesianfm.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/nesianfm.com\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_AU","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/nesianfm.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
-//# sourceURL=elementor-pro-frontend-js-before
-</script>
-
-<svg style="display: none;" class="e-font-icon-svg-symbols"></svg>
-
-
-	
-
-
-
-
 <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
 </body></html>
