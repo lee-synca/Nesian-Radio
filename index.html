@@ -936,35 +936,33 @@ window.addEventListener('unload', () => {
 </footer>
 <script id="nfm-script">
 (function(){
-  var header=document.getElementById('nfm-header');
-  var burger=document.getElementById('nfm-burger');
-  var nav=document.getElementById('nfm-nav');
-  // shrink/solidify header on scroll
-  function onScroll(){ if(!header) return; header.classList.toggle('nfm-scrolled', window.scrollY>30); }
-  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-  // mobile menu toggle
+  var body=document.body;
+  var burger=document.getElementById('hp-burger');
+  var nav=document.getElementById('hp-nav');
+  // mobile menu toggle (nfm-open lives on body.hp)
   if(burger){ burger.addEventListener('click', function(){
-    var open=header.classList.toggle('nfm-open');
+    var open=body.classList.toggle('nfm-open');
     burger.setAttribute('aria-expanded', open?'true':'false');
   }); }
-  // close mobile menu when a nav link is tapped
   nav && nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ header.classList.remove('nfm-open'); burger&&burger.setAttribute('aria-expanded','false'); });
+    a.addEventListener('click', function(){ body.classList.remove('nfm-open'); burger&&burger.setAttribute('aria-expanded','false'); });
   });
-  // "Listen Live" -> scroll to player and start it
+  // "Listen Live" -> scroll to the player and start it
   function listenLive(e){
     if(e) e.preventDefault();
-    header.classList.remove('nfm-open');
-    var top=document.getElementById('top'); top && top.scrollIntoView({behavior:'smooth'});
-    setTimeout(function(){
+    body.classList.remove('nfm-open');
+    var top=document.getElementById('top'); if(top) top.scrollIntoView({behavior:'smooth'});
+    var tries=0;
+    (function start(){
       var pb=document.querySelector('.play-button');
       var audio=window.radioPlayer&&window.radioPlayer.audio;
-      if(pb && (!audio || audio.paused)) pb.click();
-    }, 650);
+      if(pb && audio){ if(audio.paused) pb.click(); return; }
+      if(tries++ < 20) setTimeout(start, 250); // wait for the player to finish initialising
+    })();
   }
   document.querySelectorAll('[data-nfm-listen]').forEach(function(el){ el.addEventListener('click', listenLive); });
   // auto-start when arriving from a "Listen Live" link on another page (/?play=1)
-  if(location.search.indexOf('play=1')>-1){ setTimeout(function(){ listenLive(); }, 500); }
+  if(location.search.indexOf('play=1')>-1){ setTimeout(listenLive, 400); }
 })();
 </script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
