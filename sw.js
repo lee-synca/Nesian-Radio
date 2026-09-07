@@ -1,5 +1,5 @@
 /* Nesian FM service worker */
-const CACHE = 'nfm-v2';
+const CACHE = 'nfm-v3';
 const SHELL = [
   '/',
   '/about/',
