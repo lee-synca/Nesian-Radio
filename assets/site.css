@@ -33,6 +33,10 @@ a:hover{color:#a8410f;}
   box-shadow:0 8px 20px rgba(38,25,15,.22);transition:transform .15s ease,box-shadow .2s ease;}
 .nfm-live:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(38,25,15,.3);color:var(--gold2);}
 .nfm-live .nfm-dot{width:9px;height:9px;border-radius:50%;background:var(--coral2);box-shadow:0 0 0 4px rgba(232,92,70,.32);}
+/* the Listen Live button is an <a> inside .nfm-nav — re-assert its own styles over the nav-link rules */
+.nfm-nav a.nfm-live{color:var(--gold2)!important;padding:12px 22px!important;text-decoration:none!important;outline:none;}
+.nfm-nav a.nfm-live:hover,.nfm-nav a.nfm-live.nfm-active{color:var(--gold2)!important;}
+.nfm-nav a.nfm-live::after,.nfm-nav a.nfm-live:hover::after{content:none!important;display:none!important;width:0!important;}
 @keyframes nfm-pulse{0%{box-shadow:0 0 0 0 rgba(232,92,70,.55)}70%{box-shadow:0 0 0 8px rgba(232,92,70,0)}100%{box-shadow:0 0 0 0 rgba(232,92,70,0)}}
 .nfm-burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;margin-left:auto;}
 .nfm-burger span{width:26px;height:2px;background:var(--warm);border-radius:2px;transition:transform .25s ease,opacity .2s ease;}
